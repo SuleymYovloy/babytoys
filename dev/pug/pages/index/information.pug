@@ -1,0 +1,44 @@
+section.s-information.s-light-bg
+  .container 
+    .information
+      .information-item
+        .information-item__header
+          h2.title-section Новости
+        .information-item__body 
+          .news-prev__wrapper
+            a(href="").news-prev
+              .news-prev__img(style="background-image:url('static/images/content/news/news-1/prev.jpg')") 
+              .news-prev__body
+                span.news-prev__title Выставка в Германии
+                span.news-prev__date 13 июля 2019
+            a(href="").news-prev
+              .news-prev__img(style="background-image:url('static/images/content/news/news-2/prev.jpg')") 
+              .news-prev__body
+                span.news-prev__title Новинки в нашем магазине
+                span.news-prev__date 13 июля 2019    
+        .information-item__footer
+          a(href="").information-item__link Все новости
+      .information-item
+        .information-item__header
+          h2.title-section Отзывы
+        .information-item__body 
+          .review-prev
+            p.review-prev__text Купил у вас в середине лета велосипеды для себя, жены и дочери. Понравился ваш выбор и цены. Мне все велосипеды обошлись не очень дорого. Катаемся на них постоянно, ни один пока что не поломался. И доставка у вас очень быстрая, приятно.
+            span.review-prev__author Павел
+        .information-item__footer
+          a(href="").information-item__link Все отзывы
+
+      .information-item.information-item--wide
+        .information-item__header
+          h2.title-section Бренды
+        .information-item__body
+          .brands__wrapper
+            ul.brands__list.brands__list--small
+              each brand in [{img:'puky',name:'Puky'},{img:'micro',name:'Micro'},{img:'kokua',name:'KOKUA'},{img:'stiga',name:'Stiga'}]
+                li.brands__item
+                  a( href="").brand
+                    img(src=`static/images/content/brands/${brand.img}.jpg`).brand__img
+                    span.brand__name=brand.name
+        .information-item__footer.all__brands
+          a(href="").information-item__link Все бренды 
+          span.information-item__count (9)

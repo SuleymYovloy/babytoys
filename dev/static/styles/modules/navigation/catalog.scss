@@ -1,0 +1,43 @@
+.catalog-nav{
+    &__list{
+        background-color: $white;
+        position: relative;
+        .catalog-nav__list{
+            display: none;
+            left: 360px;
+            position: absolute;
+            top: 0;
+        }
+    }
+    &__item{
+        width: 360px;
+        @media screen and (max-width: $tablet-size) {
+            width: auto;
+        }
+        &:hover {
+            & > .catalog-nav__link{
+                background-color: $athens-gray;
+                color: $blaze-orange;
+            }                
+            .catalog-nav__icon {
+                stroke: $blaze-orange;
+            }
+            .catalog-nav__list{
+                display: block;
+            }           
+        }
+    }
+    &__link{
+        align-items: center;
+        color: $mine-shaft;
+        display: flex;
+        line-height: 20px;
+        padding: 10px 15px;
+        
+    }
+    &__icon{
+        @include size(12px);
+        margin-left: auto;
+        stroke: $silver;
+    }
+}

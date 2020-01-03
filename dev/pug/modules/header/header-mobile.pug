@@ -1,0 +1,56 @@
+mixin mainSubnavLink(link,text)
+  li.catalog-nav__item
+    a(href=link).catalog-nav__link
+      span.catalog-nav__text=text
+      +icon('chevron-right', 'catalog-nav__icon')
+
+mixin informNavLink(link,text)
+  li.inform-nav__item
+    a(href=link).inform-nav__link=text 
+
+
+.header__mobile 
+  .container
+    .mobile-menu
+      .mobile-menu__toogle
+        .mobile-menu__sandwich.sandwich
+          .sandwich__line.sandwich__line--top
+          .sandwich__line.sandwich__line--middle
+          .sandwich__line.sandwich__line--bottom
+        span.mobile-menu__title  Каталог товаров
+      .mobile-menu__content    
+        .mobile-menu__header
+          span.mobile-menu__title Меню
+          .mobile-menu__close
+            +icon('close', 'mobile-menu__close-icon')
+        .mobile-menu__body
+          nav.catalog-nav
+            ul.catalog-nav__list
+              each text in ['Самокаты', 'Беговелы','Велосипеды','Ролики','Скейты','Батуты','Аксессуары и запчасти','Настольные игры']
+                +mainSubnavLink('', text)
+          nav.inform-nav.inform-nav--col
+            ul.inform-nav__list
+              +informNavLink('','О компании')
+              +informNavLink('','Доставка и оплата')
+              +informNavLink('','Акции')
+              +informNavLink('','Оптовикам')
+              +informNavLink('','Новости')
+              +informNavLink('','Гарантии')
+              +informNavLink('','Контакты')     
+        .mobile-menu__footer
+          .mobile-menu__phone
+            a(href="tel:84951203034") 
+             .mobile-menu__phone-number +7 (495) 120-30-34
+            a(href="").mobile-menu__phone-link Заказать звонок
+          .mobile-menu__phone
+            a(href="tel:88007077518")
+             .mobile-menu__phone-number 8 (800) 707-75-18
+            span.mobile-menu__phone-text Звонок бесплатный           
+    .search
+      form.search__form
+        .search__input-wrapper
+          input(placeholder="Я хочу купить...").search__input
+          .search__clear
+            +icon('close', 'search__clear-icon')
+        input(type="submit" value="Найти").search__btn
+        

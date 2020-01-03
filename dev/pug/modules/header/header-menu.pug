@@ -1,0 +1,14 @@
+.header__menu
+  .container
+    .header__content 
+      include ../main-nav/main-nav                
+      .header__search.search
+        +icon('search','search__icon')
+        .search__body
+          form.search__form
+            .search__input-wrapper
+              input(placeholder="Я хочу купить...").search__input
+              .search__clear
+                +icon('close', 'search__clear-icon')
+            input(type="submit" value="Найти").search__btn
+      

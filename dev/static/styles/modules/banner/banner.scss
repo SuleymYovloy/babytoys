@@ -1,0 +1,107 @@
+.s-banner {
+  padding-bottom: 0;
+  margin-top: 20px;
+}
+.banner {
+  background-image: linear-gradient(255deg, #ffb800, #ff6d00);
+  height: 300px;
+  overflow: hidden;
+  border-radius: 4px;
+  padding: 0px 90px;
+  position: relative;
+  &__item {
+    outline: none;
+  }
+  &__navigation {
+    @include size(50px);
+    align-items: center;
+    background-color: rgba($white, .2);
+    border-radius: 50%;
+    cursor: pointer;
+    justify-content: center;
+    position: absolute;
+    margin-top: -25px;
+    top: 50%;
+    display: flex;
+    transition: all linear .3s;
+    &.banner__navigation {
+      &--prev {
+        left: 30px;
+      }
+      &--next {
+        right: 30px;
+      }
+    }
+    &:hover {
+      background-color: rgba($white, .5);
+      .banner__navigation-icon {
+        fill: rgba($black, .8);
+        transition: all linear .3s;
+        width: 10px;
+      }
+    }
+    &-icon {
+      height: 17px;
+      width: 80px;
+      fill: rgba($black, .5);
+    }
+  }
+  &__content {
+    display: flex;
+    padding: 30px 0px;
+  }
+  &__body {
+    color: $white;
+    flex: 1;
+  }
+  &__title {
+    display: block;
+    font-size: 50px;
+    line-height: 1;
+    margin-bottom: 15px;
+  }
+  &__descr {
+    display: block;
+    font-size: 18px;
+    line-height: 1.67;
+    margin-bottom: 40px;
+  }
+  &__img {
+    padding-right: 70px;
+    max-width: 100%;
+    max-height: 240px;
+    &-wrapper {
+      flex: 0 0 40%;
+      text-align: center;
+      width: 40%;
+    }
+  }
+  &__dot {
+    @include size(10px);
+    border-radius: 50%;
+    background-color: rgba(38, 38, 38, 0.3);
+    display: block;
+  }
+  &__dots {
+    bottom: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    .slick-dots {
+      align-items: center;
+      display: flex;
+      li {
+        margin-right: 10px;
+        &:last-child {
+          margin-right: 0;
+        }
+        &.slick-active {
+          .banner__dot {
+            background-color: $white;
+          }
+        }
+      }
+    }
+  }
+}

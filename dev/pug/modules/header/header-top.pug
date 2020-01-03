@@ -1,0 +1,20 @@
+mixin informNavLink(link,text)
+  li.inform-nav__item
+    a(href=link).inform-nav__link= text
+
+.header__top
+  .container
+    .header__content
+      nav.header__nav.inform-nav
+        ul.inform-nav__list
+          +informNavLink('','О компании')
+          +informNavLink('','Доставка и оплата')
+          +informNavLink('','Акции')
+          +informNavLink('','Оптовикам')
+          +informNavLink('','Новости')
+          +informNavLink('','Гарантии')
+          +informNavLink('','Контакты')
+      nav.header__nav.header__nav--right.inform-nav
+        ul.inform-nav__list
+          +informNavLink('','Регистрация')
+          +informNavLink('','Вход') 

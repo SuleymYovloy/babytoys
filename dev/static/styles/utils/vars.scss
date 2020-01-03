@@ -1,0 +1,42 @@
+// Colors
+$white: #ffffff;
+$black: #000000;
+$mid-gray: #6e6e6f;
+$athens-gray:#eef2f4; 
+$dusty-gray: #999999;
+$oslo-gray: #939495;
+$silver-chalice: #a9a9a9;
+$tundora  :#4b4b4b;   
+$silver: #cccccc;
+$chelsea-cucumber: #8eb359;
+$parcelain: #f6f8f9;
+$wild-sand: #f6f6f6;
+$parcelain: #f6f8f9;
+$blaze-orange: #ff6d00;
+$mine-shaft: #262626;
+$silver: #ccc;
+$emperor: #575555;
+$alto: #ddd;
+
+$placeholder-color: #a6a6a6;
+
+// Sizes
+$base-font-size: 14px;
+$content-size: 1140px;
+$tablet-size: 1139px;
+
+$breakpoints: (
+  "phone"       : 400px,
+  "phone-wide"  : 480px,
+  "phablet"     : 560px,
+  "tablet-small": 640px,
+  "tablet"      : 768px,
+  "tablet-wide" : 1024px,
+  "desktop"     : 1248px,
+  "desktop-wide": 1440px
+);
+
+
+// Fonts
+
+$main-font: 'Open Sans',Arial,sans-serif;

@@ -1,0 +1,46 @@
+.products-line-slider {
+    &__navigation {
+        align-items: center;
+        display: none;
+        justify-content: space-between;
+        @media screen and (max-width: $tablet-size) {
+            display: flex;
+        }
+    }
+    &__btn {
+        @include size(40px);
+        align-items: center;
+        border: 1px solid $alto;
+        border-radius: 2px;
+        display: flex;
+        justify-content: center;
+        margin: 10px 10px 15px;
+    }
+    &__icon {
+        @include size(15px);
+        fill: $blaze-orange;
+    }
+    &__dot {
+        @include size(10px);
+        border-radius: 50%;
+        background-color: $alto;
+        display: block;
+    }
+    &__dots {
+        .slick-dots {
+          align-items: center;
+          display: flex;
+          li {
+            margin-right: 10px;
+            &:last-child {
+              margin-right: 0px;
+            }
+            &.slick-active {
+              .products-line-slider__dot {
+                background-color: $blaze-orange;
+              }
+            }
+          }
+        }
+    }
+}
