@@ -42,7 +42,15 @@ $(document).ready(function () {
             customPaging : function(slider, i) {
                 return '<div class="banner__dot"></div>';
             },
-            appendDots: '.banner__dots'
+            appendDots: '.banner__dots',
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        arrows: false,
+                    }
+                }    
+            ]
         })
     };
 
@@ -95,20 +103,63 @@ $(document).ready(function () {
                 dots: true,
                 appendDots: '#' + productsLineSliderID + ' .products-line-slider__dots',
                 prevArrow: '#' + productsLineSliderID + ' .products-line-slider__btn--prev',
-                nextArrow: '#' + productsLineSliderID + ' .products-line-slider__btn--next',
+                nextArrow: '#' + productsLineSliderID + ' .products-line-slider__btn--next',  
+                customPaging: function (slider, i) {
+                    return '<div class="products-line-slider__dot"></div>';
+                },
                 responsive: [
                     {
                         breakpoint: 1139,
                         settings: {
                             slidesToShow: 3,
-                            customPaging: function (slider, i) {
-                                return '<div class="products-line-slider__dot"></div>';
-                            },
+                        }
+                    },{
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 2,
+                        }
+                    },{
+                        breakpoint: 550,
+                        settings: {
+                            slidesToShow: 1,
                         }
                     }    
                 ]
             });
         });    
+    };
+
+    let mobileMenu = function () {
+        $(document).on('click', '.mobile-menu__toggle',function () {
+            $(this).parent().addClass('mobile-menu--open');
+            if ($(window).width() < 768) {
+                $('html').addClass('fixed');
+                $('.wrapper').addClass('mobile-menu-open');
+            }
+        });
+        $(document).on('click', '.mobile-menu__close',function () {
+            $(this).closest('.mobile-menu').removeClass('mobile-menu--open');
+            if ($(window).width() < 768) {
+                $('html').removeClass('fixed');
+                $('.wrapper').removeClass('mobile-menu-open');
+            }
+        });
+    };
+
+    let productSlider = function () {
+        $('.js-product-slider-dots').slick({
+            asNavFor: '.js-product-slider',
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            prevArrow: '.product-slider-dots__btn--prev',
+            nextArrow: '.product-slider-dots__btn--next'
+        });
+        
+        $('.js-product-slider').slick({
+            asNavFor: '.js-product-slider-dots',
+            slidesToShow: 1,
+            slidesToScroll: 1
+        });
     };
 
     catalogNavHover();
@@ -118,8 +169,15 @@ $(document).ready(function () {
     tabs();
     productPrevSlider();
     productLineSlider();
+    categorySlider();
+    mobileMenu();   
+    productSlider();
 });    
-
+$(window).on('load', function () {
+    $(".sk-circle").fadeOut();
+    $(".preloader").delay(400).fadeOut("slow");
+    $("body").removeClass("fixed");
+});
 
 //Полифилы для IE11
 (function () {

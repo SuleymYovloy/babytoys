@@ -1,0 +1,29 @@
+extends template/main
+
+block variables
+    - var title = 'Бренд Puky'
+    - var pageClass = 'brand-page'
+
+block content
+    .breadcrumbs
+        .container
+            ul.breadcrumbs__list
+                li.breadcrumbs__item
+                    a(href="index.html").breadcrumbs__link Главная
+                li.breadcrumbs__item
+                    a(href="index.html").breadcrumbs__link Бренды
+                li.breadcrumbs__item
+                    span.breadcrumbs__current Puky
+    section.s-brand.s-border-bottom
+        .container
+            h1.title-page Puky
+            include pages/brand/info
+    section.s-slider.s-border-bottom
+        .container
+            include pages/brand/slider1
+    section.s-slider
+        .container
+            include pages/brand/slider2
+    section.s-content
+        .container
+            include pages/brand/content

@@ -1,0 +1,29 @@
+extends template/main 
+
+block variables
+  - var title = 'Бренды'
+  - var pageClass = 'brands-page'
+
+block content
+  .breadcrumbs
+    .container
+      ul.breadcrumbs__list
+        li.breadcrumbs__item
+          a(href="index.html").breadcrumbs__link Главная
+        li.breadcrumbs__item
+          span.breadcrumbs__current Бренды
+  section.s-brands
+    .container
+      .brands
+        h1.title-page Бренды
+        ul.brands__list.brands__list--small
+          each brand in [{img:'puky',name:'Puky'},{img:'micro',name:'Micro'},{img:'kokua',name:'KOKUA'},{img:'stiga',name:'Stiga'},{img:'puky',name:'Puky'},{img:'micro',name:'Micro'},{img:'kokua',name:'KOKUA'},{img:'stiga',name:'Stiga'},{img:'puky',name:'Puky'},{img:'micro',name:'Micro'},{img:'kokua',name:'KOKUA'},{img:'stiga',name:'Stiga'},{img:'puky',name:'Puky'},{img:'micro',name:'Micro'},{img:'kokua',name:'KOKUA'},{img:'stiga',name:'Stiga'},{img:'puky',name:'Puky'},{img:'micro',name:'Micro'}]
+            li.brands__item
+              a( href="").brand
+                img(src=`static/images/content/brands/${brand.img}.jpg` alt="Логотип бренда").brand__img
+                span.brand__name=brand.name          
+
+      .content-block
+        h3.title-block Сео текст по брендам
+        p.text Купить беговел можно в нашем интернет-магазине. Это обойдется недорого. В ассортименте есть большое количество моделей от известных производителей. Все товары соответствуютевропейским стандартам безопасности.
+        p.text Интернет-магазин <<Baby-toys>> обслуживает покупателей из всех регионов России. Можно покупать товар партиями или поштучно. Доставка Осуществляется в кратчайшие сроки не зависимо от количества приобретаемого товара. В случае необходимости магазин оказывает бесплатные консультации.

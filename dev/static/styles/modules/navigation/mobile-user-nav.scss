@@ -1,0 +1,28 @@
+.mobile-user-nav {
+    display: none;
+    margin-left: auto;
+    @media screen and (max-width: $phone-size) {
+        display: flex;
+    }
+    &__list {
+        align-items: center;
+        display: flex;
+    }
+    &__item {
+        margin-right: 5px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    &__link {
+        @include size(40px);
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        
+    }
+    &__icon {
+        fill: $blaze-orange;
+        @include size(20px);
+    }
+}

@@ -1,8 +1,26 @@
 .title {
+  &-page {
+    font-size: 30px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: $tundora;
+  }
   &-section {
     font-size: 24px;
     font-weight: 600;
     line-height: 1.67;
-    margin: 60px 0px 20px 20px;
+    margin-bottom: 20px;
+  }
+  &-block {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  &-small {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.25;
   }
 }

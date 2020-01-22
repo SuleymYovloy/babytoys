@@ -12,6 +12,9 @@
       &:last-child {
         margin-right: 0;
       }
+      &:hover {
+        border-bottom-color: $blaze-orange;
+      }
       &.tabs-navigation__item--active {
         border-bottom-color: $blaze-orange;
       }

@@ -1,31 +1,30 @@
+
 .header__mobile {
-  display: none;
-  position: relative;
-  z-index: 5;
-  @media screen and (max-width: $tablet-size) {
-      display: block;
-  }
-  .container{
-      display: flex;
-      justify-content: space-between;
-      @media screen and (max-width: $tablet-size) {
-          align-items: center;
-          justify-content: space-between;
-          padding: 0 15px;
-      }
-      & > * {
-          flex: 0 0 48%;
-          width: 48%;
-          @media screen and (max-width: $tablet-size) {
-              flex: 0 0 auto;
-              width: auto;
-          }
-      }
-  }
-  .search{
-      @media screen and (max-width: $tablet-size) {
-          display: block;
-          
-      }
-  }
-}
+    display: none;
+    position: relative;
+    @media screen and (max-width: $tablet-size) {
+        display: block;
+    }
+    .container{
+        display: flex;
+        justify-content: space-between;
+        @media screen and (max-width: $phone-size) {
+            justify-content: flex-start;
+            align-items: center;
+            padding: 0;
+        }
+        & > * {
+            flex: 0 0 48%;
+            width: 48%;
+            @media screen and (max-width: $phone-size) {
+                flex: 0 0 auto;
+                width: auto;
+            }
+        }
+    }
+    .search {
+        @media screen and (max-width: $phone-size) {
+            display: none;
+        }
+    }
+}            

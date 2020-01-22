@@ -1,0 +1,27 @@
+.content-block {
+    & > * {
+        margin: 25px 0;
+        &:first-child {
+            margin-top: 0;
+        }
+        &:last-child {
+            margin-top: 0;
+        }
+    }
+    &__row {
+        display: flex;
+        & > * {
+            margin-right: 30px;
+            &:last-child { margin-right: 0; }
+        }
+    }
+    &__col {
+        flex: 1; 
+    }
+}
+
+.s-static-page {
+  & + .s-advantages {
+    padding-top: 0;
+  }
+}

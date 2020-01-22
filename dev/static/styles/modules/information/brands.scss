@@ -1,18 +1,38 @@
-.brands__list {
-  display: flex;
-  //flex-wrap: wrap;
-  margin-left: 15px;
-  & > * {
-    margin-right: 10px;
-    margin-bottom: 10px;
-    &:nth-child(6n + 6) {
-      margin-right: 0;
-    }
-  }
-  &.brands__list--small {
+.brands {
+  padding-top: 30px;
+  border-top: 1px solid $alto;
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     & > * {
-      &:nth-child(6n + 6) {
-        margin-right: 0;
+      flex: 0 0 16%;
+      margin-bottom: 45px;
+      width: 16%;
+      @media screen and (max-width: $tablet-size) {
+        flex: 0 0 25%;
+        width: 25%;
+      }
+      @media screen and (max-width: $phone-size) {
+        flex: 0 0 50%;
+        width: 50%;
+      }
+    }
+    &--small {
+      display: flex;
+      flex-wrap: wrap;
+      @media screen and (max-width: $tablet-size) {
+        flex-wrap: wrap;
+      }
+      & > * {
+        margin-right: 10px;
+        margin-bottom: 10px;
+        &:nth-child(3n + 3) {
+          margin-right: 0;
+          @media screen and (max-width: $tablet-size) {
+            margin-right: 10px;
+          }
+        }
       }
     }
   }

@@ -1,17 +1,44 @@
 .mobile-menu {
-  &__toogle {
+  &.mobile-menu--open {
+    .mobile-menu {
+      &__content {
+        display: block
+      }
+    }
+  }
+  &__toggle {
     align-items: center;
     background-color: $blaze-orange;
     color: $white;
     cursor: pointer;
     display: flex;
     justify-content: center;
-    height: 50px;
-    width: 300px;
+    height: 50px; 
     & > * {
         margin-right: 20px;
+        @media screen and (max-width: $phone-size) {
+          margin-right: 0;
+        }
         &:last-child { margin-right: 0; }
     }
+    @media screen and (max-width: $phone-size) {
+      @include size(50px);
+      background-color: $white;
+      border-right: 1px solid rgba(75, 75, 75, 0.2);
+      margin-right: 15px;
+      .sandwich {
+        &__line {
+          background-color: $tundora;
+        }
+      } 
+    }
+    .mobile-menu {
+      &__title {
+        @media screen and (max-width: $phone-size) {
+          display: none;
+        }
+      }
+    } 
   }
   &__title {
     font-size: 16px;

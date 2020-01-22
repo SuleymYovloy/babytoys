@@ -33,12 +33,14 @@ section.s-information.s-light-bg
           h2.title-section Бренды
         .information-item__body
           .brands__wrapper
-            ul.brands__list.brands__list--small
-              each brand in [{img:'puky',name:'Puky'},{img:'micro',name:'Micro'},{img:'kokua',name:'KOKUA'},{img:'stiga',name:'Stiga'}]
-                li.brands__item
-                  a( href="").brand
-                    img(src=`static/images/content/brands/${brand.img}.jpg`).brand__img
-                    span.brand__name=brand.name
+            .mobile-scroll-wrapper
+              .mobile-scroll-inner
+                ul.brands__list.brands__list--small
+                  each brand in [{img:'puky',name:'Puky'},{img:'micro',name:'Micro'},{img:'kokua',name:'KOKUA'},{img:'stiga',name:'Stiga'}]
+                    li.brands__item
+                      a( href="brand.hml").brand
+                        img(src=`static/images/content/brands/${brand.img}.jpg`).brand__img
+                        span.brand__name=brand.name
         .information-item__footer.all__brands
-          a(href="").information-item__link Все бренды 
+          a(href="brands.hml").information-item__link Все бренды  
           span.information-item__count (9)

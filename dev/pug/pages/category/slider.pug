@@ -1,0 +1,12 @@
+section.s-category-s
+  .container
+    .category-slider
+      .category-slider__header
+        .category-slider__title Официальные дилеры Micro, Puky, Hudora, Globber
+          .category-slider__body
+            .js-category-slider
+              each slider in [{icon: 'tag',name: 'Найдете дешевле-мы сделаем скидку'},{icon: 'fast-delivery',name: 'Доставка по Москве день в день, на следующий день, через день'},{icon: 'recommended',name: 'Расширенная европейская гарантия от производителя'},{icon: 'medal',name: 'Официальный сервисный центр'},{icon: 'customer-service', name: 'Професиональная консультация от продавцов'},{icon: 'map', name: 'доставка по всей россии'}]
+                .category-slider__item
+                  +icon(slider.icon,'category-slider__icon')
+                    span.category-slider__text=slider.name
+          .category-slider__dots

@@ -25,11 +25,9 @@
     }
     &__main {
         padding: 25px 0;
-        display: flex;
-        // @media screen and (max-width: $phone-size) {
-        //     border-bottom: 0;
-        //     display: none;
-        // }
+        @media screen and (max-width: $phone-size) {
+            display: none;
+        }
     }
     &__phones {
         display: flex;

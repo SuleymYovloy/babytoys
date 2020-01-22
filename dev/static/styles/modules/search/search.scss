@@ -23,6 +23,9 @@
   &__form {
     align-items: center;
     display: flex;
+    @media screen and(max-width: $phone-size) {
+      flex-direction: column;
+    }
   }
   &__input {
     color: $tundora;
@@ -34,12 +37,21 @@
     height: 50px;
     width: 100%;
     line-height: 48px;
+    @media screen and(max-width: $phone-size) {
+      border-right: 1px solid $alto;
+      border-radius: 2px;
+    }
     &::placeholder {
       color: $placeholder-color;
     }
     &-wrapper {
       position: relative;
       flex: 1;
+      background-color: $white;
+      @media screen and(max-width: $phone-size) {
+        width: 100%;
+        margin-bottom: 15px;
+      }
     }
   }
   &__clear {
@@ -53,6 +65,9 @@
     top: 0;
     width: 40px;
     z-index: 1;
+    @media screen and(max-width: $phone-size) {
+      display: none;
+    }
     &-icon {
       fill: rgba(75, 75, 75, 0.5);
       @include size(16px);
@@ -68,5 +83,33 @@
     cursor: pointer;
     height: 50px;
     padding: 0px 15px;
+    @media screen and(max-width: $phone-size) {
+      width: 100%;
+    }
+  }
+  &-result {
+    &__header {
+      margin-bottom: 30px;
+      & > * {
+        margin: 15px 0;
+        &:first-child { margin-top: 0; }
+        &:last-child { margin-bottom: 0; }
+      }
+    }
+    &__request {
+      background-color: $athens-gray;
+      border-radius: 4px;
+      padding: 20px;
+      & > * {
+        margin: 15px 0;
+        &:first-child { margin-top: 0; }
+        &:last-child { margin-bottom: 0; }
+      }
+    }
+    &__label {
+      color: $tundora;
+      display: block;
+      font-weight: 600;
+    }
   }
 }

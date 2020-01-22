@@ -1,0 +1,72 @@
+.category-slider{
+	background-color: $athens-gray;
+	border-radius: 4px;
+	padding: 0 0px 20px;
+	&__header{
+			display: flex;
+			justify-content: center;
+			margin-bottom: 15px;
+	}
+	&__title{
+			font-size: 19px;
+			color: $white;
+			border-radius: 0 0 4px 4px;
+			line-height: 1.58;
+			// font-family: $banner-title-font;
+			padding: 10px 20px;
+			background-color: rgba(52, 59,76, 0.5)
+	}
+	&__item{
+			font-size: 12px;
+			margin: 0 10px;
+			outline: none;
+			text-align: center;
+			padding: 0 10px;
+	}
+	&__icon{
+			@include size(30px);
+			display: block;
+			margin: 0 auto 15px;
+			fill: $blaze-orange;
+			margin-bottom: 15px;
+	}
+	&__dots{
+			position: absolute;
+			bottom: -20px;
+			width: 100%;
+			display: none;
+			justify-content: center;
+			@media screen and (max-width: $tablet-size){
+					display: flex;
+			}
+			.slick-dots{
+					display: flex;
+					align-items: center;
+					& > * {
+							margin-right: 10px;
+							&:last-child{margin-right: 0;}
+					}
+					li{
+							&.slick-active{
+									.category-slider__dot{
+											background-color: $blaze-orange;
+									}
+							}
+					}
+			}
+	}
+	&__dot{
+			@include size(10px);
+			border-radius: 50%;
+			background-color: $alto;
+			cursor: pointer;
+	}
+}
+
+.js-category {
+	&-slider {
+		display: flex;
+		padding-top: 10px;
+		justify-content: space-between;
+	}
+}

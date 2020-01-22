@@ -1,6 +1,22 @@
+@import "preloader";
+@import "content-block";
+@import "about";
+
 .logo {
   &__img {
     height: 22px;
+    @media screen and (max-width: $phone-size) {
+      height: 16px;
+    }
+  }
+}
+
+.mobile {
+  &__logo {
+    display: none;
+    @media screen and (max-width: $phone-size) {
+      display: block;
+    }
   }
 }
 
@@ -10,22 +26,36 @@
   align-items: center;
   padding: 20px;
   border-radius: 4px;
-  @media screen and (max-width: $tablet-size){
+  @media screen and (max-width: $tablet-size) {
     justify-content: space-between;
     padding: 20px 40px;
+  }
+  @media screen and (max-width: $phone-size) {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: flex-start;
   }
 }
 .advantage {
   align-items: center;
   display: flex;
   margin-right: 180px;
-  @media screen and (max-width: $tablet-size){
+  @media screen and (max-width: $tablet-size) {
     flex-direction: column;
     margin-right: 0;
     text-align: center;
   }
+  @media screen and (max-width: $phone-size) {
+    flex-direction: row;
+    text-align: left;
+    margin-bottom: 10px;
+  }
   &:last-child {
     margin-right: 0;
+    @media screen and (max-width: $phone-size) {
+      margin-bottom: 0;
+    }
   }
   &__body {
     display: flex;
@@ -39,9 +69,13 @@
     @include size(50px);
     fill: $dusty-gray;
     margin-right: 20px;
-    @media screen and (max-width: $tablet-size){
-      margin-right: 0;  
+    @media screen and (max-width: $tablet-size) {
+      margin-right: 0;
       margin-bottom: 10px;
+    }
+    @media screen and (max-width: $phone-size) {
+      margin-right: 20px;
+      margin-bottom: 0;
     }
   }
   &__descr {
@@ -61,8 +95,10 @@
     flex-direction: column;
   }
   & > * {
-      margin-right: 30px;
-      &:last-child { margin-right: 0; }
+    margin-right: 30px;
+    &:last-child {
+      margin-right: 0;
+    }
   }
   &__body {
     flex: 1;
@@ -71,9 +107,13 @@
     }
     .tab {
       & > * {
-          margin: 15px 0;
-          &:first-child { margin-top: 0; }
-          &::last-child { margin-bottom: 0; } 
+        margin: 15px 0;
+        &:first-child {
+          margin-top: 0;
+        }
+        &::last-child {
+          margin-bottom: 0;
+        }
       }
     }
   }
@@ -86,6 +126,9 @@
       flex: 1;
       margin-bottom: 30px;
       width: 100%;
+    }
+    @media screen and (max-width: $phone-size) {
+      overflow: auto;
     }
     &__item {
       height: 50px;
@@ -102,6 +145,9 @@
           margin-right: 0;
         }
       }
+      &:hover {
+        border-bottom-color: $blaze-orange;
+      }
       &.tabs-navigation__item--active {
         border-bottom-color: $blaze-orange;
       }
@@ -113,28 +159,62 @@
   height: 16px;
   position: relative;
   width: 20px;
-  &--active {
-    .sandwich__line {
-      &--top {
-        top: 7px;
-        transform: rotate(-45deg);
-      }
-      &--bottom {
-        top: 7px;
-        transform: rotate(-45deg);
-      }
-    }
-  }
+
   &__line {
     background-color: $white;
     display: block;
     height: 2px;
     left: 0;
     position: absolute;
-    transition: all linear .4s;
+    transition: all linear 0.4s;
     width: 100%;
-    &--top { top: 0; }
-    &--middle { top: 7px; }
-    &--bottom { top: 14px; }
+    &--top {
+      top: 0;
+    }
+    &--middle {
+      top: 7px;
+    }
+    &--bottom {
+      top: 14px;
+    }
   }
 }
+
+.breadcrumbs {
+  padding-top: 30px;
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+  &__item {
+    align-items: center;
+    display: flex;
+    &:after {
+      content: "";
+      background-image: url("../images/general/breadcrumb-arrow.svg");
+      display: inline-block;
+      height: 11px;
+      margin: 0 10px;
+      width: 16px;
+      background-repeat: no-repeat;
+    }
+    &:last-child {
+      &:after {
+        display: none;
+      }
+    }
+  }
+  &__link {
+    color: $tundora;
+    font-size: 13px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &__current {
+    color: $tundora;
+    font-size: 13px;
+    font-weight: 600;
+  }
+}
+
